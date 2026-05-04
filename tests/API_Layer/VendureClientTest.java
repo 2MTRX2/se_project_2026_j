@@ -1,0 +1,34 @@
+package API_Layer;
+
+import API_Layer.FakeVendureClient;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+
+public class VendureClientTest {
+
+    private VendureClient client;
+
+    @BeforeEach
+    void setUp() {
+        client = new FakeVendureClient();
+    }
+
+    @Test
+    void shouldReturnMockedProducts() {
+        List<Product> products = client.getProducts();
+
+        assertEquals(2, products.size());
+        assertEquals("Laptop", products.get(0).getName());
+    }
+
+    @Test
+    void shouldReturnMockedProductsInCart() {
+        List<Product> products = client.getCart();
+
+        assertEquals(2, products.size());
+        assertEquals("Laptop", products.get(0).getName());
+    }
+}
