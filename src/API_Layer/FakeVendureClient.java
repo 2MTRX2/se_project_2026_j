@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FakeVendureClient extends VendureClient{
     public FakeVendureClient() {
-        super();
+        super("fake-url");
     }
 
     @Override

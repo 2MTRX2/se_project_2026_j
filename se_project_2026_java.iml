@@ -26,5 +26,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mockito.core" level="project" />
+    <orderEntry type="library" name="info.picocli" level="project" />
   </component>
 </module>

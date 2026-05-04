@@ -3,6 +3,11 @@ package API_Layer;
 import java.util.List;
 
 public class VendureClient {
+    private String url;
+
+    public VendureClient(String url) {
+        this.url = url;
+    }
 
     public List<Product> getProducts() {
         throw new UnsupportedOperationException("Not implemented yet");
