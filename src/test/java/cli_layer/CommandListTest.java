@@ -1,14 +1,13 @@
 package cli_layer;
 
-import api_layer.Product;
-import api_layer.VendureClient;
-import org.junit.jupiter.api.Test;
-
 import static org.mockito.Mockito.*;
 
+import api_layer.Product;
+import api_layer.VendureClient;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class CommandListTest {
     @Test

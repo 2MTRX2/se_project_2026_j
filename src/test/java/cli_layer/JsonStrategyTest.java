@@ -1,10 +1,10 @@
 package cli_layer;
 
-import api_layer.Product;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import api_layer.Product;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 public class JsonStrategyTest {
     @Test
