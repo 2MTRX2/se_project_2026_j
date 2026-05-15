@@ -1,4 +1,4 @@
-package API_Layer;
+package api_layer;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,6 +1,6 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.VendureClient;
+import api_layer.VendureClient;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
@@ -11,8 +11,9 @@ public class CommandCartTest {
     void shouldCallCartLogic() {
 
         VendureClient client = mock(VendureClient.class);
+        OutputStrategy outputStrategy = mock(OutputStrategy.class);
 
-        Command command = new CommandCart(client);
+        Command command = new CommandCart(client, outputStrategy);
 
         command.execute();
 

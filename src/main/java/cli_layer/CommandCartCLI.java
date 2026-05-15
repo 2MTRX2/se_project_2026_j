@@ -1,7 +1,7 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.ConfigService;
-import API_Layer.VendureClient;
+import api_layer.ConfigService;
+import api_layer.VendureClient;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;

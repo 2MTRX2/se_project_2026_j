@@ -1,4 +1,4 @@
-package CLI_Layer;
+package cli_layer;
 
 
 public class StrategyFactory {

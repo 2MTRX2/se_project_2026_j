@@ -1,6 +1,6 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.Product;
+import api_layer.Product;
 import java.util.List;
 
 public interface OutputStrategy {

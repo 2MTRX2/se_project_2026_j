@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'ch.jk'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Standard-Test-Framework (JUnit 5)
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+    // ZWINGEND ERFORDERLICH FÜR GRADLE 9.X:
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+
+    // Mockito für Unit-Tests
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+
+    // Picocli für CLI-Parsing
+    implementation 'info.picocli:picocli:4.7.7'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // Hier Ihre Java-Version eintragen (z. B. 11, 17, 21)
+    }
+}
+
+application {
+    // Ersetzen Sie dies durch den echten Pfad zu Ihrer Klasse mit der main()-Methode
+    mainClass = 'cli_layer.Main'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    failOnNoDiscoveredTests = false
+}

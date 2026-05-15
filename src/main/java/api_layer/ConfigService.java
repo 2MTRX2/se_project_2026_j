@@ -1,4 +1,4 @@
-package API_Layer;
+package api_layer;
 
 /*
 This class should return an appropriate URL of the webshop-API according

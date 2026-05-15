@@ -1,6 +1,5 @@
-package API_Layer;
+package api_layer;
 
-import API_Layer.FakeVendureClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,6 +1,6 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.Product;
+import api_layer.Product;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

@@ -1,9 +1,9 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.Product;
-import API_Layer.VendureClient;
+import api_layer.Product;
+import api_layer.VendureClient;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.mockito.Mockito.*;
 
 import java.io.ByteArrayOutputStream;

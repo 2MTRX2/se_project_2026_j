@@ -1,4 +1,4 @@
-package CLI_Layer;
+package cli_layer;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;

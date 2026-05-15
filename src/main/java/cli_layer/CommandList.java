@@ -1,6 +1,6 @@
-package CLI_Layer;
+package cli_layer;
 
-import API_Layer.VendureClient;
+import api_layer.VendureClient;
 
 public class CommandList implements Command {
     private final VendureClient vendureClient;

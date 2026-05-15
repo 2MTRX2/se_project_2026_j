@@ -1,4 +1,4 @@
-package API_Layer;
+package api_layer;
 
 public class Product {
     private String name;
