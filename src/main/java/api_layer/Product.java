@@ -2,7 +2,8 @@ package api_layer;
 
 public record Product(String name, double price) {
 
-  @Override public String name() {
+  @Override
+  public String name() {
     throw new UnsupportedOperationException("Not implemented yet");
   }
 
@@ -10,7 +11,8 @@ public record Product(String name, double price) {
     throw new UnsupportedOperationException("Not implemented yet");
   }
 
-  @Override public double price() {
+  @Override
+  public double price() {
     throw new UnsupportedOperationException("Not implemented yet");
   }
 
