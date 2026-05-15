@@ -6,8 +6,8 @@ import java.util.List;
 
 public class TableStrategy implements OutputStrategy {
 
-    @Override
-    public String format(List<Product> products) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+  @Override
+  public String format(List<Product> products) {
+    throw new UnsupportedOperationException("Not implemented yet");
+  }
 }
