@@ -12,13 +12,13 @@ public class Main implements Runnable {
   @CommandLine.Option(names = "--url", scope = CommandLine.ScopeType.INHERIT)
   String url;
 
-  @Override
-  public void run() {
-    System.out.println("Use a subcommand: list, cart, ...");
-  }
-
   public static void main(String[] args) {
     int exitCode = new CommandLine(new Main()).execute(args);
     System.exit(exitCode);
+  }
+
+  @Override
+  public void run() {
+    System.out.println("Use a subcommand: list, cart, ...");
   }
 }

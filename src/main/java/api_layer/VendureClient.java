@@ -3,7 +3,7 @@ package api_layer;
 import java.util.List;
 
 public class VendureClient {
-  private String url;
+  private final String url;
 
   public VendureClient(String url) {
     this.url = url;

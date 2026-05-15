@@ -20,7 +20,7 @@ public class VendureClientTest {
     List<Product> products = client.getProducts();
 
     assertEquals(2, products.size());
-    assertEquals("Laptop", products.get(0).getName());
+    assertEquals("Laptop", products.get(0).name());
   }
 
   @Test
@@ -28,6 +28,6 @@ public class VendureClientTest {
     List<Product> products = client.getCart();
 
     assertEquals(2, products.size());
-    assertEquals("Laptop", products.get(0).getName());
+    assertEquals("Laptop", products.get(0).name());
   }
 }
