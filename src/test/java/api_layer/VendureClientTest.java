@@ -8,26 +8,26 @@ import org.junit.jupiter.api.Test;
 
 public class VendureClientTest {
 
-    private VendureClient client;
+  private VendureClient client;
 
-    @BeforeEach
-    void setUp() {
-        client = new FakeVendureClient();
-    }
+  @BeforeEach
+  void setUp() {
+    client = new FakeVendureClient();
+  }
 
-    @Test
-    void shouldReturnMockedProducts() {
-        List<Product> products = client.getProducts();
+  @Test
+  void shouldReturnMockedProducts() {
+    List<Product> products = client.getProducts();
 
-        assertEquals(2, products.size());
-        assertEquals("Laptop", products.get(0).name());
-    }
+    assertEquals(2, products.size());
+    assertEquals("Laptop", products.get(0).name());
+  }
 
-    @Test
-    void shouldReturnMockedProductsInCart() {
-        List<Product> products = client.getCart();
+  @Test
+  void shouldReturnMockedProductsInCart() {
+    List<Product> products = client.getCart();
 
-        assertEquals(2, products.size());
-        assertEquals("Laptop", products.get(0).name());
-    }
+    assertEquals(2, products.size());
+    assertEquals("Laptop", products.get(0).name());
+  }
 }

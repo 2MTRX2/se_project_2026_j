@@ -7,16 +7,16 @@ import api_layer.VendureClient;
 import org.junit.jupiter.api.Test;
 
 public class CommandCartTest {
-    @Test
-    void shouldCallCartLogic() {
+  @Test
+  void shouldCallCartLogic() {
 
-        VendureClient client = mock(VendureClient.class);
-        OutputStrategy outputStrategy = mock(OutputStrategy.class);
+    VendureClient client = mock(VendureClient.class);
+    OutputStrategy outputStrategy = mock(OutputStrategy.class);
 
-        Command command = new CommandCart(client, outputStrategy);
+    Command command = new CommandCart(client, outputStrategy);
 
-        command.execute();
+    command.execute();
 
-        verify(client).getCart();
-    }
+    verify(client).getCart();
+  }
 }

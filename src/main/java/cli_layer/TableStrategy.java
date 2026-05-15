@@ -1,7 +1,6 @@
 package cli_layer;
 
 import api_layer.Product;
-
 import java.util.List;
 
 public class TableStrategy implements OutputStrategy {
