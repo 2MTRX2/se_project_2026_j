@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -23,6 +23,8 @@ jobs:
 
       - name: Verify Google Java Format
         uses: axel-op/googlejavaformat-action@v4
+        with:
+          skip-commit: false
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
