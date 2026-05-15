@@ -21,6 +21,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Verify Google Java Format
+        uses: axel-op/googlejavaformat-action@v3
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -29,5 +32,5 @@ jobs:
 
 
       - name: Build with Gradle Wrapper
-        run: ./gradlew build -x test
+        run: ./gradlew build
 
