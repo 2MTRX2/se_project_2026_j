@@ -9,25 +9,26 @@ import picocli.CommandLine.Option;
 @Command(name = "cart", description = "Displays cart information")
 public class CommandCartCLI implements Runnable {
 
-  @CommandLine.ParentCommand Main main;
+    @CommandLine.ParentCommand
+    Main main;
 
-  @Option(names = "--format")
-  String format = "table";
+    @Option(names = "--format")
+    String format = "table";
 
-  @Override
-  public void run() {
-    String url = main.url;
+    @Override
+    public void run() {
+        String url = main.url;
 
-    ConfigService configService = new ConfigService();
+        ConfigService configService = new ConfigService();
 
-    String resolvedUrl = configService.getUrl("url", url == null ? "" : url);
+        String resolvedUrl = configService.getUrl("url", url == null ? "" : url);
 
-    VendureClient client = new VendureClient(resolvedUrl);
+        VendureClient client = new VendureClient(resolvedUrl);
 
-    OutputStrategy strategy = StrategyFactory.create(format);
+        OutputStrategy strategy = StrategyFactory.create(format);
 
-    CommandCart command = new CommandCart(client, strategy);
+        CommandCart command = new CommandCart(client, strategy);
 
-    command.execute();
-  }
+        command.execute();
+    }
 }

@@ -1,22 +1,22 @@
 package cli_layer;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-
 import api_layer.VendureClient;
 import org.junit.jupiter.api.Test;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
 public class CommandCartTest {
-  @Test
-  void shouldCallCartLogic() {
+    @Test
+    void shouldCallCartLogic() {
 
-    VendureClient client = mock(VendureClient.class);
-    OutputStrategy outputStrategy = mock(OutputStrategy.class);
+        VendureClient client = mock(VendureClient.class);
+        OutputStrategy outputStrategy = mock(OutputStrategy.class);
 
-    Command command = new CommandCart(client, outputStrategy);
+        Command command = new CommandCart(client, outputStrategy);
 
-    command.execute();
+        command.execute();
 
-    verify(client).getCart();
-  }
+        verify(client).getCart();
+    }
 }
