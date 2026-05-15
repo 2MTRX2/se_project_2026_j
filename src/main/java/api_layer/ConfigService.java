@@ -6,7 +6,7 @@ This class should return an appropriate URL of the webshop-API according
  */
 public class ConfigService {
 
-    public String getUrl(String cliUrl, String envUrl) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+  public String getUrl(String cliUrl, String envUrl) {
+    throw new UnsupportedOperationException("Not implemented yet");
+  }
 }
