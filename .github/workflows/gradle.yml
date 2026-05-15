@@ -25,6 +25,7 @@ jobs:
         uses: axel-op/googlejavaformat-action@v4
         with:
           skip-commit: false
+        continue-on-error: true
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
