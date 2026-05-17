@@ -20,7 +20,11 @@ public class VendureClientTest {
             + "  \"data\": {"
             + "    \"products\": {"
             + "      \"items\": ["
-            + "        {\"id\": \"1\", \"name\": \"Shoe\", \"price\": 49.99}"
+            + "        {"
+            + "          \"id\": \"1\","
+            + "          \"name\": \"Shoe\","
+            + "          \"variants\": [{\"price\": 4999}]" // 49.99 als Cent-Wert
+            + "        }"
             + "      ]"
             + "    }"
             + "  }"
@@ -41,7 +45,7 @@ public class VendureClientTest {
     assertNotNull(products);
     assertEquals(1, products.size());
     assertEquals("Shoe", products.get(0).getName());
-    assertEquals(49.99, products.get(0).getPrice());
+    assertEquals(49.99, products.get(0).getPrice(), 0.001);
   }
 
   @Test
@@ -66,7 +70,7 @@ public class VendureClientTest {
         });
   }
 
-  // --- Hilfsklasse, um das HttpResponse-Interface für den Test zu simulieren ---
+
   private static class MockHttpResponse implements HttpResponse<String> {
     private final String bodyContent;
 
