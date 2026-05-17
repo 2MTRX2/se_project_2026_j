@@ -22,16 +22,18 @@ public class VendureClient {
     this.objectMapper = new ObjectMapper();
   }
 
-
   public <T> T execute(GraphQLRequest<T> request) throws Exception {
     /* create the http request */
     Map<String, Object> payload = new HashMap<>();
     payload.put("query", request.getQuery());
-    payload.put("variables", request.getVariables() != null ? request.getVariables() : Collections.emptyMap());
+    payload.put(
+        "variables",
+        request.getVariables() != null ? request.getVariables() : Collections.emptyMap());
 
     String jsonPayload = objectMapper.writeValueAsString(payload);
 
-    HttpRequest httpRequest = HttpRequest.newBuilder()
+    HttpRequest httpRequest =
+        HttpRequest.newBuilder()
             .uri(URI.create(this.url))
             .header("Content-Type", "application/json")
             .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
@@ -55,7 +57,6 @@ public class VendureClient {
   protected HttpResponse<String> sendRequest(HttpRequest httpRequest) throws Exception {
     return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
   }
-
 
   public List<Product> getProducts() {
     try {

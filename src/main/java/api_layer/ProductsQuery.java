@@ -1,6 +1,5 @@
 package api_layer;
 
-import api_layer.Product;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,9 @@ public class ProductsQuery implements GraphQLRequest<ProductsQuery.ProductsData>
         + "    items { "
         + "      id "
         + "      name "
-        + "      price "
+        + "      variants { "
+        + "        price "
+        + "      } "
         + "    } "
         + "  } "
         + "}";

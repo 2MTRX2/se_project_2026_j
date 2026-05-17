@@ -53,7 +53,8 @@ public class TableStrategyTest {
 
     String printedOutput = outputStreamCaptor.toString();
 
-    assertTrue(printedOutput.contains("+------------+--------------------------------+------------+"));
+    assertTrue(
+        printedOutput.contains("+------------+--------------------------------+------------+"));
 
     assertTrue(printedOutput.contains("ID"));
     assertTrue(printedOutput.contains("Name"));

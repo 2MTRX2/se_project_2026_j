@@ -15,7 +15,8 @@ public class VendureClientTest {
   @Test
   void shouldReturnProductsSuccessfullyWhenServerResponds() throws Exception {
     // simulating the response of a server
-    String mockServerJson = "{"
+    String mockServerJson =
+        "{"
             + "  \"data\": {"
             + "    \"products\": {"
             + "      \"items\": ["
@@ -26,13 +27,13 @@ public class VendureClientTest {
             + "}";
 
     // overriding the send request to avoid a real request
-    VendureClient clientWithMockHttp = new VendureClient("http://mock-url.com") {
-      @Override
-      protected HttpResponse<String> sendRequest(HttpRequest httpRequest) {
-        return new MockHttpResponse(mockServerJson); // returns our fake response
-      }
-    };
-
+    VendureClient clientWithMockHttp =
+        new VendureClient("http://mock-url.com") {
+          @Override
+          protected HttpResponse<String> sendRequest(HttpRequest httpRequest) {
+            return new MockHttpResponse(mockServerJson); // returns our fake response
+          }
+        };
 
     List<Product> products = clientWithMockHttp.getProducts();
 
@@ -46,23 +47,23 @@ public class VendureClientTest {
   @Test
   void shouldThrowExceptionWhenGraphQLServerReturnsErrors() {
     // simulating an error response
-    String mockErrorJson = "{"
-            + "  \"errors\": [{"
-            + "    \"message\": \"Access denied\""
-            + "  }]"
-            + "}";
+    String mockErrorJson =
+        "{" + "  \"errors\": [{" + "    \"message\": \"Access denied\"" + "  }]" + "}";
 
-    VendureClient clientWithError = new VendureClient("http://mock-url.com") {
-      @Override
-      protected HttpResponse<String> sendRequest(HttpRequest httpRequest) {
-        return new MockHttpResponse(mockErrorJson);
-      }
-    };
+    VendureClient clientWithError =
+        new VendureClient("http://mock-url.com") {
+          @Override
+          protected HttpResponse<String> sendRequest(HttpRequest httpRequest) {
+            return new MockHttpResponse(mockErrorJson);
+          }
+        };
 
     // test if the runtime exception is thrown
-    assertThrows(RuntimeException.class, () -> {
-      clientWithError.getProducts();
-    });
+    assertThrows(
+        RuntimeException.class,
+        () -> {
+          clientWithError.getProducts();
+        });
   }
 
   // --- Hilfsklasse, um das HttpResponse-Interface für den Test zu simulieren ---
@@ -74,20 +75,44 @@ public class VendureClientTest {
     }
 
     @Override
-    public String body() { return bodyContent; }
+    public String body() {
+      return bodyContent;
+    }
 
     @Override
-    public int statusCode() { return 200; }
+    public int statusCode() {
+      return 200;
+    }
 
     // remaining methods return null
-    @Override public HttpRequest request() { return null; }
+    @Override
+    public HttpRequest request() {
+      return null;
+    }
+
     @Override
     public Optional<HttpResponse<String>> previousResponse() {
       return null;
     }
-    @Override public java.net.http.HttpHeaders headers() { return null; }
-    @Override public java.util.Optional<javax.net.ssl.SSLSession> sslSession() { return java.util.Optional.empty(); }
-    @Override public java.net.URI uri() { return null; }
-    @Override public java.net.http.HttpClient.Version version() { return null; }
+
+    @Override
+    public java.net.http.HttpHeaders headers() {
+      return null;
+    }
+
+    @Override
+    public java.util.Optional<javax.net.ssl.SSLSession> sslSession() {
+      return java.util.Optional.empty();
+    }
+
+    @Override
+    public java.net.URI uri() {
+      return null;
+    }
+
+    @Override
+    public java.net.http.HttpClient.Version version() {
+      return null;
+    }
   }
 }
