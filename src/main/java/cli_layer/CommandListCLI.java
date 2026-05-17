@@ -19,7 +19,7 @@ public class CommandListCLI implements Runnable {
 
     ConfigService config = new ConfigService();
 
-    String resolvedUrl = config.getUrl("url", url == null ? "" : url);
+    String resolvedUrl = config.getUrl(url);
 
     VendureClient client = new VendureClient(resolvedUrl);
 

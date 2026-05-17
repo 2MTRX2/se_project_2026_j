@@ -11,19 +11,22 @@ repositories {
 }
 
 dependencies {
-    // Standard-Test-Framework (JUnit 5)
+
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 
-    // ZWINGEND ERFORDERLICH FÜR GRADLE 9.X:
+
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
 
-    // Mockito für Unit-Tests
+
     testImplementation 'org.mockito:mockito-core:5.11.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
 
-    // Picocli für CLI-Parsing
     implementation 'info.picocli:picocli:4.7.7'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.17.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.0'
 }
 
 java {

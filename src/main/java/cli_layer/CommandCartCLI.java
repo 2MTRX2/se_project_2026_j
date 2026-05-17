@@ -20,7 +20,7 @@ public class CommandCartCLI implements Runnable {
 
     ConfigService configService = new ConfigService();
 
-    String resolvedUrl = configService.getUrl("url", url == null ? "" : url);
+    String resolvedUrl = configService.getUrl(url);
 
     VendureClient client = new VendureClient(resolvedUrl);
 

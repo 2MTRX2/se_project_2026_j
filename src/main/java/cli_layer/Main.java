@@ -13,8 +13,21 @@ public class Main implements Runnable {
   String url;
 
   public static void main(String[] args) {
-    int exitCode = new CommandLine(new Main()).execute(args);
-    System.exit(exitCode);
+    String[] testArgs = new String[]{"--url", "http://localhost:3000/shop-api", "list"};
+
+    try {
+      CommandLine cmd = new CommandLine(new Main());
+
+      cmd.setExecutionExceptionHandler((ex, commandLine, parseResult) -> {
+        ex.printStackTrace(); // Zeigt uns den echten Fehler!
+        return 1;
+      });
+
+      int exitCode = cmd.execute(testArgs);
+      System.exit(exitCode);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   @Override

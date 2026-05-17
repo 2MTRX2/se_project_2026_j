@@ -16,21 +16,30 @@ public class ConfigServiceTest {
 
   @Test
   void shouldReturnDefaultUrlWhenNothingIsProvided() {
-    String result = configService.getUrl(null, null);
+    String result = configService.getUrl(null);
     assertEquals("http://localhost:3000/shop-api", result);
   }
 
   @Test
   void shouldReturnUrlWhenUrlIsProvided() {
     String url = "http://url-provided.com";
-    String result = configService.getUrl(url, null);
+    String result = configService.getUrl(url);
     assertEquals("http://url-provided.com", result);
   }
 
   @Test
   void shouldReturnEnvWhenUrlIsNotProvided() {
-    String env = "http://url-env.com";
-    String result = configService.getUrl(null, env);
+    ConfigService configServiceWithEnv = new ConfigService() {
+      /*Mocking the Env Variable */
+      @Override
+      protected String getEnvVariable(String name) {
+        if ("URL".equals(name)) {
+          return "http://url-env.com";
+        }
+        return null;
+      }
+    };
+    String result = configServiceWithEnv.getUrl(null);
     assertEquals("http://url-env.com", result);
   }
 }

@@ -1,22 +1,33 @@
 package api_layer;
 
-public record Product(String name, double price) {
+public class  Product {
+  private String name;
+  private double price;
+  private String id;
 
-  @Override
-  public String name() {
-    throw new UnsupportedOperationException("Not implemented yet");
+  public Product(String name, double price, String id) {
+    this.name = name;
+    this.price = price;
+    this.id = id;
+  }
+
+  public String getName() {
+    return this.name;
   }
 
   public void setName(String name) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    this.name = name;
   }
 
-  @Override
-  public double price() {
-    throw new UnsupportedOperationException("Not implemented yet");
+  public double getPrice() {
+    return this.price;
   }
 
   public void setPrice(double price) {
-    throw new UnsupportedOperationException("Not implemented yet");
+    this.price = price;
   }
+
+  public String getId() {return this.id; }
+
+  public void setId(String id) { this.id = id; }
 }

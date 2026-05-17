@@ -1,6 +1,9 @@
 package cli_layer;
 
 import api_layer.VendureClient;
+import api_layer.Product;
+
+import java.util.List;
 
 public class CommandList implements Command {
   private final VendureClient vendureClient;
@@ -13,6 +16,13 @@ public class CommandList implements Command {
 
   @Override
   public void execute() {
-    throw new UnsupportedOperationException("Not implemented yet");
+    try {
+      List<Product> products = vendureClient.getProducts();
+
+      outputStrategy.render(products);
+
+    } catch (Exception e) {
+      System.err.println("Error: " + e.getMessage());
+    }
   }
 }
