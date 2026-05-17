@@ -14,8 +14,8 @@ import org.junit.jupiter.api.Test;
 
 public class TableStrategyTest {
 
-  private TableStrategy tableStrategy;
   private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+  private TableStrategy tableStrategy;
   private PrintStream originalOut;
 
   @BeforeEach

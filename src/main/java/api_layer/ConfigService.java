@@ -17,6 +17,7 @@ public class ConfigService {
     }
     return "http://localhost:3000/shop-api";
   }
+
   protected String getEnvVariable(String name) {
     return System.getenv(name);
   }

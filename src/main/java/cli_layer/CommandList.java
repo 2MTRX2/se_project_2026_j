@@ -1,8 +1,7 @@
 package cli_layer;
 
-import api_layer.VendureClient;
 import api_layer.Product;
-
+import api_layer.VendureClient;
 import java.util.List;
 
 public class CommandList implements Command {

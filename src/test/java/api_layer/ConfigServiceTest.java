@@ -29,16 +29,17 @@ public class ConfigServiceTest {
 
   @Test
   void shouldReturnEnvWhenUrlIsNotProvided() {
-    ConfigService configServiceWithEnv = new ConfigService() {
-      /*Mocking the Env Variable */
-      @Override
-      protected String getEnvVariable(String name) {
-        if ("URL".equals(name)) {
-          return "http://url-env.com";
-        }
-        return null;
-      }
-    };
+    ConfigService configServiceWithEnv =
+        new ConfigService() {
+          /*Mocking the Env Variable */
+          @Override
+          protected String getEnvVariable(String name) {
+            if ("URL".equals(name)) {
+              return "http://url-env.com";
+            }
+            return null;
+          }
+        };
     String result = configServiceWithEnv.getUrl(null);
     assertEquals("http://url-env.com", result);
   }

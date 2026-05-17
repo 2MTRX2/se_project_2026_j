@@ -22,11 +22,8 @@ public class TableStrategy implements OutputStrategy {
     for (Product product : products) {
 
       System.out.printf(
-              "| %-10s | %-30s | %10.2f |\n",
-              product.getId(),
-              product.getName(),
-              (double) product.getPrice()
-      );
+          "| %-10s | %-30s | %10.2f |\n",
+          product.getId(), product.getName(), (double) product.getPrice());
     }
 
     System.out.println(lineSeparator);

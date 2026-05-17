@@ -8,7 +8,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
-
 import org.junit.jupiter.api.Test;
 
 public class VendureClientTest {

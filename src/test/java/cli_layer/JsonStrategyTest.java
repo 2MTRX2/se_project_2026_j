@@ -14,8 +14,8 @@ import org.junit.jupiter.api.Test;
 
 public class JsonStrategyTest {
 
-  private JsonStrategy jsonStrategy;
   private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+  private JsonStrategy jsonStrategy;
   private PrintStream originalOut;
 
   @BeforeEach

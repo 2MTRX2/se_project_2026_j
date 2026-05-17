@@ -1,6 +1,6 @@
 package api_layer;
 
-public class  Product {
+public class Product {
   private String name;
   private double price;
   private String id;
@@ -11,8 +11,7 @@ public class  Product {
     this.id = id;
   }
 
-  public Product() {
-  }
+  public Product() {}
 
   public String getName() {
     return this.name;
@@ -30,7 +29,11 @@ public class  Product {
     this.price = price;
   }
 
-  public String getId() {return this.id; }
+  public String getId() {
+    return this.id;
+  }
 
-  public void setId(String id) { this.id = id; }
+  public void setId(String id) {
+    this.id = id;
+  }
 }

@@ -15,12 +15,13 @@ public class CommandListTest {
   void shouldFetchProductsAndPassThemToStrategy() {
     Product testProduct = new Product("test", 10.0, "11");
 
-    VendureClient fakeClient = new VendureClient("http://fake-url.com") {
-      @Override
-      public List<Product> getProducts() {
-        return List.of(testProduct);
-      }
-    };
+    VendureClient fakeClient =
+        new VendureClient("http://fake-url.com") {
+          @Override
+          public List<Product> getProducts() {
+            return List.of(testProduct);
+          }
+        };
 
     SpyOutputStrategy spyStrategy = new SpyOutputStrategy();
 

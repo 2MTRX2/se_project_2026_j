@@ -9,52 +9,53 @@ import picocli.CommandLine;
 
 public class CommandCartCLITest {
 
-    private CommandCartCLI commandCartCLI;
-    private Main mockMain;
+  private CommandCartCLI commandCartCLI;
+  private Main mockMain;
 
-    @BeforeEach
-    void setUp() {
-        commandCartCLI = new CommandCartCLI();
+  @BeforeEach
+  void setUp() {
+    commandCartCLI = new CommandCartCLI();
 
-        mockMain = new Main();
-        mockMain.url = "http://localhost:3000/shop-api";
+    mockMain = new Main();
+    mockMain.url = "http://localhost:3000/shop-api";
 
-        commandCartCLI.main = mockMain;
-    }
+    commandCartCLI.main = mockMain;
+  }
 
-    @Test
-    void shouldParseDefaultFormatAsTable() {
-        CommandLine cmd = new CommandLine(commandCartCLI);
+  @Test
+  void shouldParseDefaultFormatAsTable() {
+    CommandLine cmd = new CommandLine(commandCartCLI);
 
-        cmd.parseArgs();
+    cmd.parseArgs();
 
-        assertEquals("table", commandCartCLI.format);
-    }
+    assertEquals("table", commandCartCLI.format);
+  }
 
-    @Test
-    void shouldParseJsonFormatOption() {
-        CommandLine cmd = new CommandLine(commandCartCLI);
+  @Test
+  void shouldParseJsonFormatOption() {
+    CommandLine cmd = new CommandLine(commandCartCLI);
 
-        cmd.parseArgs("--format", "json");
+    cmd.parseArgs("--format", "json");
 
-        assertEquals("json", commandCartCLI.format);
-    }
+    assertEquals("json", commandCartCLI.format);
+  }
 
-    @Test
-    void shouldExecuteWithoutCrashingWithMockedBehavior() {
-        CommandCartCLI safeCommandCartCLI = new CommandCartCLI() {
-            @Override
-            public void run() {
-                assertNotNull(main.url);
-                assertEquals("http://localhost:3000/shop-api", main.url);
-                assertEquals("table", this.format);
-            }
+  @Test
+  void shouldExecuteWithoutCrashingWithMockedBehavior() {
+    CommandCartCLI safeCommandCartCLI =
+        new CommandCartCLI() {
+          @Override
+          public void run() {
+            assertNotNull(main.url);
+            assertEquals("http://localhost:3000/shop-api", main.url);
+            assertEquals("table", this.format);
+          }
         };
 
-        safeCommandCartCLI.main = mockMain;
-        CommandLine cmd = new CommandLine(safeCommandCartCLI);
+    safeCommandCartCLI.main = mockMain;
+    CommandLine cmd = new CommandLine(safeCommandCartCLI);
 
-        int exitCode = cmd.execute();
-        assertEquals(0, exitCode);
-    }
+    int exitCode = cmd.execute();
+    assertEquals(0, exitCode);
+  }
 }
