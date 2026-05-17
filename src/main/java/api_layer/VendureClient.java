@@ -40,7 +40,7 @@ public class VendureClient {
             .build();
 
     /* send the http request */
-    HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+    HttpResponse<String> httpResponse = sendRequest(httpRequest);
 
     /* convert the response into Java classes */
     JsonNode rootNode = objectMapper.readTree(httpResponse.body());
@@ -52,6 +52,10 @@ public class VendureClient {
     JsonNode dataNode = rootNode.get("data");
 
     return objectMapper.treeToValue(dataNode, request.getResponseClass());
+  }
+
+  protected HttpResponse<String> sendRequest(HttpRequest httpRequest) throws Exception {
+    return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
   }
 
 

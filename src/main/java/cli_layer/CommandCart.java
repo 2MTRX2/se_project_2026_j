@@ -2,6 +2,7 @@ package cli_layer;
 
 import api_layer.VendureClient;
 
+// This class is not implemented yet.
 public class CommandCart implements Command {
   VendureClient vendureClient;
   OutputStrategy outputStrategy;
